@@ -19,13 +19,13 @@ def new_game():
     print("Wrong guesses will result in the hangman being built.")
     print("Guess all correct letters of the word before he is complete!\n")
 
-    play()
+    play()   
 
 
 def play():
     """
-    Picks a random word from words.py. Prints word length in underscores.
-    Sets the hangman to stage 6 / begining stage. Takes user input.
+    Prints the word length in underscores to the user.
+    Sets the hangman to stage 6 / begining stage.
     """
     word = random.choice(word_list)
     print(word)
