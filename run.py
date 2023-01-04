@@ -37,9 +37,8 @@ def play():
     letters_guessed = []
     # Input box for answer
     user_input = input("Type a letter here:\n")
-    # Function to check answer is valid
+    # Function to check answer
     check_answer(user_input)
-    # If valid but wrong append to letters_guessed []
 
 
 def check_answer(user_input):
@@ -47,6 +46,7 @@ def check_answer(user_input):
       print("yes")
    else:
       print(f"{user_input} is not a valid guess, please enter one letter.")
+
 
 
 def hangman(stage):
