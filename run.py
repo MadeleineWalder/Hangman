@@ -36,6 +36,11 @@ def play(word):
     """
     word_guess = "_" * len(word)
     print(word_guess)
+    stage = 6
+    print(hangman(stage))
+    # Add input box and function to check answer is valid? If else statement?
+    # If answer is valid (one single letter) the call necxt function
+    # Else print("Guess not valid. Please guess one letter at a time.")
 
 
 def hangman(stage):
@@ -43,7 +48,7 @@ def hangman(stage):
     Defines each stage of the hangman as items on a list which
     can be iterated as neccissary and displayed to the user.
     """
-    stages = [  # 6th stage: head, body, arms, and both legs
+    stages = [  # Stage 0: head, body, arms, and both legs
                 """
                    --------
                    |      |
@@ -53,7 +58,7 @@ def hangman(stage):
                    |     / \
                    --_
                 """,
-                # 5th stage: head, body, arms, and leg
+                # Stage 1: head, body, arms, and leg
                 """
                    --------
                    |      |
@@ -63,7 +68,7 @@ def hangman(stage):
                    |     / 
                    --_
                 """,
-                # 4th stage: head, body, and both arms
+                # Stage 2: head, body, and both arms
                 """
                    --------
                    |      |
@@ -73,7 +78,7 @@ def hangman(stage):
                    |      
                    --_
                 """,
-                # 3rd stage: head, body, and arm
+                # Stage 3: head, body, and arm
                 """
                    --------
                    |      |
@@ -83,7 +88,7 @@ def hangman(stage):
                    |     
                    --_
                 """,
-                # 2nd stage: head and body
+                # Stage 4: head and body
                 """
                    --------
                    |      |
@@ -93,7 +98,7 @@ def hangman(stage):
                    |     
                    --_
                 """,
-                # 1st stage: head
+                # Stage 5: head
                 """
                    --------
                    |      |
@@ -103,7 +108,7 @@ def hangman(stage):
                    |     
                    --_
                 """,
-                # base/empty template
+                # Stage 6: base/empty template
                 """
                    --------
                    |      |
