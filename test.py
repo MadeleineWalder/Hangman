@@ -5,7 +5,8 @@
 import random
 from words import word_list
 
-# python3 run.py
+# python3 test.py
+# Current state: quite old
 
 
 def new_game():
@@ -19,50 +20,39 @@ def new_game():
     print("Wrong guesses will result in the hangman being built.")
     print("Guess all correct letters of the word before he is complete!\n")
 
-    play_game()
+    play()
 
 
-def play_game():
+def play():
     """
     Picks a random word from words.py & prints length in underscores.
     Sets the hangman to stage 6 (begining). Takes user input.
     """
     word = random.choice(word_list)
-    word_length = "_" * len(word)
-    print(word_length)
+    word_guess = "_" * len(word)
+    print(word_guess)
     stage = 6
     print(hangman(stage))
     # Set letters guessed as empty list that can have users guesses appended
     letters_guessed = []
     # Set variable for win condition
     word_complete = False
-    # Check answer
-    while not word_complete and stage > 0:
-        user_input = input("Type a letter here:\n")
-        if len(user_input) == 1 and user_input.isalpha():
-            if user_input in word:
-                print("Letter is in word!")
-                # Add to the word -look at line 30-38
-                # ---
-                # Print it
-                # When word complete game over, user wins
-            elif user_input not in word:
-                print("Letter not in word")
-                # Add to letters guessed
-                letters_guessed.append(user_input)
-                print(letters_guessed)
-                # Add a stage to hangman
-                stage -= 1
-                print(hangman(stage))
-        else:
-            print(f"{user_input} is not a valid guess, please enter one letter.")
-    if word_complete:
-        print("Congrats you completed the word!")
+    # Input box for answer
+    user_input = input("Type a letter here:\n")
+    # Function to check answer
+    check_answer(user_input)
+
+
+def check_answer(user_input):
+    """
+    Checks users input is a single letter
+    """
+    if len(user_input) == 1 and user_input.isalpha():
+        return True
     else:
-        print("Unlucky! You ran out of guesses.")
+        print(f"{user_input} is not a valid guess, please enter one letter.")
+        return False
 
-
-# WHAT IF YOU ENTER SAME LETTER AGAIN?
 
 
 def hangman(stage):
