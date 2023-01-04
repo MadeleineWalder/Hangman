@@ -32,15 +32,29 @@ def get_random_word():
 
 def play(word):
     """
-    Prints word_str to the user.
+    Prints the word length in underscores to the user.
+    Sets the hangman to stage 6 / begining stage.
     """
     word_guess = "_" * len(word)
     print(word_guess)
     stage = 6
     print(hangman(stage))
-    # Add input box and function to check answer is valid? If else statement?
-    # If answer is valid (one single letter) the call necxt function
+    # Set letters guessed as empty list that can have users guesses appended
+    letters_guessed = []
+    # Add input box for answer
+    user_input = input("Type a letter here:\n")
+    # Function to check answer is valid? If else statement?
+    check_answer(user_input)
+    # If answer is valid (one single letter) the call next function
     # Else print("Guess not valid. Please guess one letter at a time.")
+    # If valid but wrong append to letters_guessed []
+
+
+def check_answer(user_input):
+   if len(user_input) == 1:
+      print("yes")
+   else:
+      print("no")
 
 
 def hangman(stage):
