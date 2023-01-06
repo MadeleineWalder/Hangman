@@ -6,9 +6,6 @@ import random
 from words import word_list
 
 # python3 testing.py
-# Current state: same as run.py file but less added to elif
-# (lines around 40-63 may differ) and uncalled function
-# still present. Lines around 40-63 may differ
 
 
 def new_game():

@@ -32,37 +32,49 @@ def play_game():
     print(word_length)
     stage = 6
     print(hangman(stage))
-    # Set letters guessed as empty list that can have users guesses appended
+    # Set empty list that can have users guesses appended
     letters_guessed = []
     # Set variable for win condition
     word_complete = False
-    # Check answer
+    # Check answer is valid
     while not word_complete and stage > 0:
         user_input = input("Type a letter here:\n")
         if len(user_input) == 1 and user_input.isalpha():
+            # For correct answers:
             if user_input in word:
-                print("Letter is in word!")
-                # Add to the word -look at line 30-38
-                # ---
-                # Print it
-                # When word complete game over, user wins
-            elif user_input not in word:
-                print("Letter not in word")
+                print(f"Correct! {user_input} is in the word!\n")
+                # Code used here is from a Python YouTube tutorial by
+                # the channel 'Kite'. Line 32-38 from their code.
+                word_as_list = list(word_length)
+                indices = [
+                    i for i, letter in enumerate(word) if letter == user_input
+                    ]
+                for index in indices:
+                    word_as_list[index] = user_input
+                word_length = "".join(word_as_list)
+                if "_" not in word_length:
+                    word_complete = True
+                # Code from Kite ends here
+            # For already guessed answers:
+            elif user_input in letters_guessed:
+                print(f"Oops, you already guessed {user_input}\n")
+            # For wrong answers:
+            else:
+                print("Letter not in word\n")
                 # Add to letters guessed
                 letters_guessed.append(user_input)
-                print(letters_guessed)
                 # Add a stage to hangman
                 stage -= 1
-                print(hangman(stage))
         else:
-            print(f"{user_input} is not a valid guess, please enter one letter.")
+            print(f"{user_input} is not a valid guess, please enter one letter.\n")
+        print(word_length)
+        print("\n")
+        print(', '.join(letters_guessed))
+        print(hangman(stage))
     if word_complete:
-        print("Congrats you completed the word!")
+        print("Congratulations! You completed the word!\n")
     else:
-        print("Unlucky! You ran out of guesses.")
-
-
-# WHAT IF YOU ENTER SAME LETTER AGAIN?
+        print("Unlucky! You ran out of guesses.\n")
 
 
 def hangman(stage):
