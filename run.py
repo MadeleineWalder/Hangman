@@ -1,4 +1,6 @@
-# Import random and my words from words.py file to use in game
+"""
+Import random and my words from words.py file to use in game
+"""
 import random
 from words import word_list
 
