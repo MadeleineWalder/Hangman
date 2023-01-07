@@ -13,19 +13,35 @@ def new_game():
     Begins a new game by welcoming user
     and giving brief instrucions.
     """
+    print("\n")
     print("Welcome to Hangman!\n")
     print("Guess a letter by typing it and pressing the ENTER key.")
     print("Correct guesses will fill their place within the word.")
-    print("Wrong guesses will result in the hangman being built.")
+    print("Wrong guesses will result in a stage of the hangman being added.")
     print("Guess all correct letters of the word before he is complete!\n")
 
-    play_game()
+    question()
+
+
+def question():
+    """
+    Asks the user if they want to play a game when
+    the program is run and after each game.
+    """
+    play_question = input("Would you like to play? (Y/N)\n").upper()
+    if play_question == "Y":
+        print("Great, lets play!\n")
+        play_game()
+    else:
+        print("Okay, we hope you change your mind!")
+        new_game()
 
 
 def play_game():
     """
-    Picks a random word from words.py & prints length in underscores.
-    Sets the hangman to stage 6 (begining). Takes user input.
+    Picks & prints a random word in underscores. Sets the hangman
+    to begining stage. Takes user input and processes it accordingly
+    until user has won or lost the game.
     """
     word = random.choice(word_list)
     word_length = "_" * len(word)
@@ -76,6 +92,8 @@ def play_game():
     else:
         print("Unlucky! You ran out of guesses.\n")
 
+    question()
+
 
 def hangman(stage):
     """
@@ -89,8 +107,8 @@ def hangman(stage):
                    |      O
                    |     \|/
                    |      |
-                   |     / \
-                   --_
+                   |     L L
+                   |
                 """,
                 # Stage 1: head, body, arms, and leg
                 """
@@ -99,8 +117,8 @@ def hangman(stage):
                    |      O
                    |     \|/
                    |      |
-                   |     / 
-                   --_
+                   |       L 
+                   |
                 """,
                 # Stage 2: head, body, and both arms
                 """
@@ -110,7 +128,7 @@ def hangman(stage):
                    |     \|/
                    |      |
                    |      
-                   --_
+                   |
                 """,
                 # Stage 3: head, body, and arm
                 """
@@ -120,7 +138,7 @@ def hangman(stage):
                    |     \|
                    |      |
                    |     
-                   --_
+                   |
                 """,
                 # Stage 4: head and body
                 """
@@ -130,7 +148,7 @@ def hangman(stage):
                    |      |
                    |      |
                    |     
-                   --_
+                   |
                 """,
                 # Stage 5: head
                 """
@@ -140,7 +158,7 @@ def hangman(stage):
                    |    
                    |      
                    |     
-                   --_
+                   |
                 """,
                 # Stage 6: base/empty template
                 """
@@ -150,7 +168,7 @@ def hangman(stage):
                    |    
                    |      
                    |     
-                   --_
+                   |
                 """
     ]
     return stages[stage]
