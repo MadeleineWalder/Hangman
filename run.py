@@ -1,7 +1,4 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
-
+# Import random and my words from words.py file to use in game
 import random
 from words import word_list
 
@@ -10,8 +7,7 @@ from words import word_list
 
 def new_game():
     """
-    Begins a new game by welcoming user
-    and giving brief instrucions.
+    The start where the user is welcomed and given brief instrucions.
     """
     print("\n")
     print("Welcome to Hangman!\n")
@@ -25,8 +21,7 @@ def new_game():
 
 def question():
     """
-    Asks the user if they want to play a game when
-    the program is run and after each game.
+    Asks user if they want to play when the program is run and after each game.
     """
     play_question = input("Would you like to play? (Y/N)\n").upper()
     if play_question == "Y":
@@ -39,28 +34,25 @@ def question():
 
 def play_game():
     """
-    Picks & prints a random word in underscores. Sets the hangman
-    to begining stage. Takes user input and processes it accordingly
-    until user has won or lost the game.
+    Picks & prints random word in underscores. Sets hangman to begining
+    stage. Creates list for guessed letters. Sets win condition to False. 
+    Takes user input and processes accordingly until user wins or looses.
     """
     word = random.choice(word_list)
     word_length = "_" * len(word)
     print(word_length)
     stage = 6
     print(hangman(stage))
-    # Set empty list that can have users guesses appended
     letters_guessed = []
-    # Set variable for win condition
     word_complete = False
     # Check answer is valid
     while not word_complete and stage > 0:
-        user_input = input("Type a letter here:\n")
+        user_input = input("Type a letter here:\n").lower()
         if len(user_input) == 1 and user_input.isalpha():
             # For correct answers:
             if user_input in word:
                 print(f"Correct! {user_input} is in the word!\n")
-                # Code used here is from a Python YouTube tutorial by
-                # the channel 'Kite'. Line 32-38 from their code.
+                # Code by 'Kite'. More info in readme.md under 'Credit'.
                 word_as_list = list(word_length)
                 indices = [
                     i for i, letter in enumerate(word) if letter == user_input
@@ -77,12 +69,11 @@ def play_game():
             # For wrong answers:
             else:
                 print("Letter not in word\n")
-                # Add to letters guessed
                 letters_guessed.append(user_input)
-                # Add a stage to hangman
                 stage -= 1
         else:
-            print(f"{user_input} is not a valid guess, please enter one letter.\n")
+            print(f"'{user_input}' Not a valid guess, please enter one letter.\n")
+        # Print important information for user to see
         print(word_length)
         print("\n")
         print(', '.join(letters_guessed))
@@ -97,8 +88,7 @@ def play_game():
 
 def hangman(stage):
     """
-    Defines each stage of the hangman as items on a list which
-    can be iterated as neccissary and displayed to the user.
+    Defines each stage of the hangman
     """
     stages = [  # Stage 0: head, body, arms, and both legs
                 """
@@ -160,7 +150,7 @@ def hangman(stage):
                    |     
                    |
                 """,
-                # Stage 6: base/empty template
+                # Stage 6: begining
                 """
                    --------
                    |      |
