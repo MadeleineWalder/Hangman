@@ -36,9 +36,8 @@ def question():
 
 def play_game():
     """
-    Picks & prints random word in underscores. Sets hangman to begining
-    stage. Creates list for guessed letters. Sets win condition to False. 
-    Takes user input and processes accordingly until user wins or looses.
+    Print random word in underscores. Set hangman to begining stage. Create
+    list for guessed letters. Process user input until user wins/looses.
     """
     word = random.choice(word_list)
     word_length = "_" * len(word)
