@@ -4,7 +4,7 @@ Import random and my words from words.py file to use in game
 import random
 from words import word_list
 
-# python3 run.py
+# python3 test.py
 
 
 def new_game():
@@ -12,26 +12,33 @@ def new_game():
     The start where the user is welcomed and given brief instrucions.
     """
     print("\n")
-    print("Welcome to Hangman!")
-    print("Guess the letters in the word before the hangman is complete!\n")
+    print("Welcome to Hangman!\n")
+    print("Guess a letter by typing it and pressing the ENTER key.")
+    print("Correct guesses will fill their place within the word.")
+    print("Wrong guesses will result in a stage of the hangman being added.")
+    print("Guess all correct letters of the word before he is complete!\n")
 
     question()
 
 
 def question():
+    play_question = input("Would you like to play? (Y/N)\n").upper()
+    answer(play_question)
+
+
+def answer():
     """
     Asks user if they want to play when the program is run and after each game.
     """
-    play_question = input("Would you like to play? (Y/N)\n").upper()
     if play_question == "Y":
         print("Great, lets play!\n")
         play_game()
     elif play_question == "N":
         print("Okay, we hope you change your mind!")
-        new_game()
+        question()
     else:
         print("Please answer 'Y' for yes or 'N' for no.")
-        new_game()
+        question()
 
 
 def play_game():
