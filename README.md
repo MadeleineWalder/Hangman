@@ -1,6 +1,8 @@
 # Hangman
 
---- intro ---
+Welcome to Hangman! A simple game based on a childhood classic written using python. In this game the user can play against the computer to guess a random word before they run out of lives.
+
+---
 
 ### Link to deployed program: --- ADD ---
 
@@ -24,6 +26,10 @@
 
 ## Validator Testing:
 
+- I tested my code using JSHint and it found no errors
+
+--add image--
+
 ---
 
 ## Deployment:
@@ -42,7 +48,11 @@
 
 ## Credits:
 
---- mention Kite ---
+- Line 55-63 of the run.py file takes heavey inspiration from a YouTube tutorial by a channel called 'Kite'. I had a lot of trouble and spent a lot of time trying to figure ouut how to write this part of the code.
+- I knew I wanted the correct letters to replace the underscores in the word when guessed but I was'nt sure how to do this. I knew that I would need the program to iterate through the individual letters of the word
+and see if they matched to the users guess. What I didn't know until watching this tutorial was that I could use the '.join' method to the add that letter in if it did match.
+
+--- add link ---
 
 ---
 
