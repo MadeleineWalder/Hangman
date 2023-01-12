@@ -80,9 +80,7 @@ def play_game():
     if word_complete:
         print("Congratulations! You completed the word!\n")
     else:
-        print("Unlucky! You ran out of guesses.")
-        print(f"The word was: {word}.\n")
-
+        print(f"You ran out of guesses! The word was: {word}.\n")
     question()
 
 

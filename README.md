@@ -11,6 +11,11 @@ In this game the user can play as many times as they want, with a list of over 5
 
 ## User Expectations / Stories
 
+- As a user I want to be able to play a game of Hangman
+- As a user I want to be able to see clearly what letters I have already guessed
+- As a user I want to be able to play the game as many times as I want
+- As a user I want to a variety of words to guess from to keep the game interesting
+
 ---
 
 ## Existing Features:
