@@ -1,7 +1,7 @@
 """
 List of words to use in game
 """
-word_list = [
+WORD_LIST = [
     'cat',
     'dog',
     'ostrich',
