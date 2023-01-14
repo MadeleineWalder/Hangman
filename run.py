@@ -44,10 +44,9 @@ def  play_game():
     word_length = "_" * len(word)
     print(word_length)
     stage = 6
-    print(display_hangman(stage))
+    (display_hangman(stage))
     letters_guessed = []
     word_complete = False
-    # Check answer is valid
     while not word_complete and stage > 0:
         user_input = ask_user_for_letter(letters_guessed, word)
         if user_input in word:
@@ -93,10 +92,9 @@ def ask_user_for_letter(letters_guessed, word):
         if user_input in letters_guessed:
             print(f"Oops, you already guessed {user_input}\n")
         elif len(user_input) == 1 and user_input.isalpha():
-            return user_input    
+            return user_input
         else:
             print("Please enter one letter")
-    
 
 
 if __name__ == '__main__':
