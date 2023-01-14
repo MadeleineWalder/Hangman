@@ -30,7 +30,7 @@ def question():
         print("Okay, we hope you change your mind!")
         
 def take_user_input_for_play():
-    play_question = 'A';
+    play_question = 'A'
     print("Would you like to play? (Y/N)\n")
     while play_question not in ['Y', 'N']:
         play_question = input().upper()
@@ -90,12 +90,13 @@ def ask_user_for_letter(letters_guessed, word):
     user_input_invalid = True
     while user_input_invalid:
         user_input = input("Type a letter here:\n").lower()
-        if len(user_input) == 1 and user_input.isalpha():
-            return user_input
-        elif (user_input in letters_guessed):
-            print(f"Oops, you already guessed {user_input}\n")    
+        if user_input in letters_guessed:
+            print(f"Oops, you already guessed {user_input}\n")
+        elif len(user_input) == 1 and user_input.isalpha():
+            return user_input    
         else:
-            print('please enter a letter')
+            print("Please enter one letter")
+    
 
 
 if __name__ == '__main__':
