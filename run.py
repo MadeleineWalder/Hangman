@@ -1,16 +1,17 @@
-""" Import random and my words from words.py file to use in game"""
+""" Import random and my words from words.py file to use in game """
 import random
 from words import WORD_LIST
 
+""" Import hangman diagram and all its stages from hangman.py file """
 from hangman import __HANGMAN_STAGES__, display_hangman
 
 # python3 run.py
 
 
 def new_game():
-    """
+    '''
     The start where the user is welcomed and given brief instrucions.
-    """
+    '''
     print("\n")
     print("Welcome to Hangman!")
     print("Guess the letters in the word before the hangman is complete!\n")
@@ -19,17 +20,21 @@ def new_game():
 
 
 def question():
-    """
-    Asks user if they want to play when the program is run and after each game.
-    """
+    '''
+    If user input is valid, runs game for "Y" (Yes) and ends game for "N" (No).
+    '''
     play_question = take_user_input_for_play()
     if play_question == "Y":
-            print("Great, lets play!\n")
-            play_game()
+        print("Great, lets play!\n")
+        play_game()
     elif play_question == "N":
         print("Okay, we hope you change your mind!")
-        
+
+
 def take_user_input_for_play():
+    '''
+    Asks user if they want to play.
+    '''
     play_question = 'A'
     print("Would you like to play? (Y/N)\n")
     while play_question not in ['Y', 'N']:
@@ -39,7 +44,14 @@ def take_user_input_for_play():
     return play_question
 
 
-def  play_game():
+def play_game():
+    '''
+    Selects a random word from words.py. Shows user word length in underscores.
+    Takes the user input if valid and assigns it to letters_guessed list.
+    If user input is in the word it will be added in correct place. If not a
+    hangman stage is added. Checks if underscores are still present, if not
+    user must have won as the word must be complete.
+    '''
     word = random.choice(WORD_LIST)
     word_length = "_" * len(word)
     print(word_length)
@@ -52,7 +64,7 @@ def  play_game():
         if user_input in word:
             print(f"Correct! {user_input} is in the word!\n")
             letters_guessed.append(user_input)
-            # Code by 'Kite'. More info in readme.md under 'Credit'.
+            # Code by 'Kite'.
             word_as_list = list(word_length)
             indices = [
                 i for i, letter in enumerate(word) if letter == user_input
@@ -60,6 +72,7 @@ def  play_game():
             for index in indices:
                 word_as_list[index] = user_input
             word_length = "".join(word_as_list)
+            # Ends here.
             if "_" not in word_length:
                 word_complete = True
         else:
@@ -70,8 +83,17 @@ def  play_game():
     display_final_result(word_complete, word)
     question()        
 
-            
+
 def user_guess_result(word_length, letters_guessed, stage):
+    '''
+    Shows important information to the user at the begining of the game
+    and after each guess is processed.
+
+    :param word_length: The word in underscores which correct letters replace.
+    :param letters_guessed: List of letters user has already guessed.
+    :param stage: The stage of the hangman.
+
+    '''
     print(word_length)
     print("\n")
     print('Letters guessed:' + ' ' + ', '.join(letters_guessed))
@@ -79,6 +101,13 @@ def user_guess_result(word_length, letters_guessed, stage):
 
 
 def display_final_result(word_complete, word):
+    '''
+    Congratulates user if word completed and they won the game.
+    Or tells them if they ran out of guesses and what the correct answer was.
+
+    :param word_complete: The win condition.
+    :param word: The word that they needed to guess. The correct answer.
+    '''
     if word_complete:
         print("Congratulations! You completed the word!\n")
     else:
@@ -88,9 +117,11 @@ def display_final_result(word_complete, word):
 def ask_user_for_letter(letters_guessed, word):
     '''
     Checks if user input is valid by checking it is one letter in the alphabet.
+    If letter already guessed/invalid it tells them and asks for another input.
 
-    :param letters_guessed: The letters already guessed by the user
-    :param 
+    :param letters_guessed: List of letters user has already guessed.
+    :param word: The word containing the letters which the user must guess.
+    :return: The user input if valid.
     '''
     user_input = 'asdfas'
     user_input_invalid = True

@@ -1,3 +1,6 @@
+'''
+Contains the hangman diagram in each stage.
+'''
 __HANGMAN_STAGES__ = [  # Stage 0: head, body, arms, and both legs
                 """
                    --------
@@ -72,7 +75,9 @@ __HANGMAN_STAGES__ = [  # Stage 0: head, body, arms, and both legs
 
 
 def display_hangman(stage):
-    """
-    Defines each stage of the hangman
-    """
+    '''
+    Prints a stage of the hangman diagram.
+
+    :param stage: The stage of completion that the hangman is at.
+    '''
     print(__HANGMAN_STAGES__[stage])

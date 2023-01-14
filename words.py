@@ -1,6 +1,6 @@
-"""
+'''
 List of words to use in game
-"""
+'''
 WORD_LIST = [
     'cat',
     'dog',
