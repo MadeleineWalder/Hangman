@@ -51,6 +51,7 @@ def  play_game():
         user_input = ask_user_for_letter(letters_guessed, word)
         if user_input in word:
             print(f"Correct! {user_input} is in the word!\n")
+            letters_guessed.append(user_input)
             # Code by 'Kite'. More info in readme.md under 'Credit'.
             word_as_list = list(word_length)
             indices = [
@@ -73,7 +74,7 @@ def  play_game():
 def user_guess_result(word_length, letters_guessed, stage):
     print(word_length)
     print("\n")
-    print(', '.join(letters_guessed))
+    print('Letters guessed:' + ' ' + ', '.join(letters_guessed))
     display_hangman(stage)
 
 
@@ -85,6 +86,12 @@ def display_final_result(word_complete, word):
 
 
 def ask_user_for_letter(letters_guessed, word):
+    '''
+    Checks if user input is valid by checking it is one letter in the alphabet.
+
+    :param letters_guessed: The letters already guessed by the user
+    :param 
+    '''
     user_input = 'asdfas'
     user_input_invalid = True
     while user_input_invalid:
