@@ -1,4 +1,4 @@
-# Clears terminal before printing. Command 'python3 run.py' invisible to user.
+# Clears terminal before printing starting game.
 import os
 
 # Import random word from words.py file
@@ -9,6 +9,7 @@ from words import WORD_LIST
 from hangman import __HANGMAN_STAGES__, display_hangman
 
 # python3 run.py
+
 
 def clear_screen():
     '''
@@ -45,7 +46,7 @@ def take_user_input_for_play():
     Asks user if they want to play.
     '''
     play_question = 'A'
-    print("Would you like to play? (Y/N)\n")
+    print("Would you like to play? (Y / N)\n")
     while play_question not in ['Y', 'N']:
         play_question = input().upper()
         if play_question not in ['Y', 'N']:
@@ -77,7 +78,7 @@ def play_game():
             word_as_list = list(word_length)
             indices = [
                 i for i, letter in enumerate(word) if letter == user_input
-                ]
+                 ]
             for index in indices:
                 word_as_list[index] = user_input
             word_length = "".join(word_as_list)
@@ -90,7 +91,7 @@ def play_game():
             stage -= 1
         user_guess_result(word_length, letters_guessed, stage)
     display_final_result(word_complete, word)
-    question()        
+    question()  
 
 
 def user_guess_result(word_length, letters_guessed, stage):
@@ -126,7 +127,7 @@ def display_final_result(word_complete, word):
 def ask_user_for_letter(letters_guessed, word):
     '''
     Checks if user input is valid by checking it is one letter in the alphabet.
-    If letter already guessed/invalid it tells them and asks for another input.
+    If letter already guessed / invalid it tells them & asks for another input.
 
     :param letters_guessed: List of letters user has already guessed.
     :param word: The word containing the letters which the user must guess.

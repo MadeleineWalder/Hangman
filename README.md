@@ -19,21 +19,29 @@ Welcome to Hangman, a simple game based on a childhood classic. In this game the
 
 ## Existing Features:
 
-- Firstly there is a welcome message to user, before asking them if they want to play the game.
+- Firstly there is a welcome message to user. Then they are asked if they want to play the game.
 
 - Upon answering no the user is told how they can start the game again if they change their mind.
 
 - If they answer yes, the game begins and an empty word is diplayed along with the base stage of the hangman.
 
 - The user can then enter a letter of their choice, pressing enter to submit the letter. From here there are four possible outcomes:
-1. If the letter is not in the word
 
-2. If the letter is in the word
+1. The letter is not in the word. The letter is added to the 'Letters guessed:' list for the user to see. They are notified with a print statement that the letter is not in the word, and one stage of hangman is added and displayed.
 
-3. If the letter is already guessed, reguardless of if it's in the word or not
+2. The letter is in the word. The letter is added to the 'Letters guessed:' list for the user to see. They are notified with a print statement that the letter was correct, and it is added into the word.
 
-4. If the user input is invalid
+3. The letter is already guessed. Reguardless of if it's in the word or not, if the letter is in the 'Letters guessed:' list they will be notified with a print statement that they already guessed that letter.
 
+4. The user input is invalid. The user must enter one single letter, or they will be told their answer was invalid and asked again for an input. Letters are not case sensitive.
+
+- At the end of each of these the user is asked again for an input until the word or hangman are complete.
+
+- If the hangman is complete they are told that have run out guesses, and it's game over. The word is then revealed to them so they can see what it was.
+
+- If the word is complete they are congratulated on their win.
+
+- After either of these outcomes the user is asked again if they would like to play, and the cycle continues.
 
 ---
 
@@ -47,8 +55,9 @@ Welcome to Hangman, a simple game based on a childhood classic. In this game the
 
 ## Technologies:
 
-- Python was the main technology I used for this project. All the game code is written in Python.
+- Python was the main coding language I used for this project. All the game code is written in Python.
 - I used [Github](https://github.com/) along with a Python template to create my repository and [Gitpod](https://www.gitpod.io/) for writting the code.
+- I used [Heroku](https://www.heroku.com) to deploy my project.
 
 ---
 
@@ -58,9 +67,19 @@ Welcome to Hangman, a simple game based on a childhood classic. In this game the
 
 ## Validator Testing:
 
-- I tested my code using JSHint and it found no errors
+- I tested my code using [Python Syntax Checker PEP8](https://www.pythonchecker.com) and found one indentation error which I quickly fixed resulting in no errors.
 
---add image--
+Validation of run.py file:
+
+![Screenshot of run.py file showing 0 erros](./docs/codecheck1.jpg)
+
+Validation of hangman.py file:
+
+![Screenshot of hangamn.py file showing 0 erros](./docs/codecheck2.jpg)
+
+Validation of words.py file:
+
+![Screenshot of words.py file showing 0 erros](./docs/codecheck3.jpg)
 
 ---
 
@@ -68,17 +87,34 @@ Welcome to Hangman, a simple game based on a childhood classic. In this game the
 
 - I had a bug where the legs of the hangman diagram were made of slashes like so: / \ . However the program saw the backslash as something that shouldn't be displayed for some reason. This resulted in him always having one leg and offset the bottom of the stand onto to right end of the next line. Basically it ruined the final stage of the diagram and I had to rework it by making the legs L's instead. This seemed to fix the issue as the program no longer recognised the punctuation as a kind of command or syntax for something else.
 
+Before:
+
+![Screenshot of ](./docs/.jpg)
+
+After:
+
+![Screenshot of ](./docs/.jpg)
+
 ---
 
 ## Deployment:
 
 ### Gitpod
 
----text here ---
+- Typing 'python3 -m http.server' into the Gitpod terminal and clicking open browser on the pop up window allows you to view the site in a browser as if it were live.
+- Every time a secton of code is added the browser can be refreshed to see the change. Sometimes you need to press ctrl, shift and R at the same time for changes to be updated.
+- To save your progress, type 'git add .' into the terminal to add all your changes, followed by 'git commit -m' and then your message describing what you did in double quotes.
+- Lastly type'git push' and this will push your code along with all the saved changes. This should be done at the end of every coding session or whenever you want an already deployed site to be updated.
+
 
 ### Github and Github Pages
 
---- text here ---
+- To deploy my site I first went to Github and found my project repository on the left hand side and clicked it.
+- I then clicked on 'Settings' and then the 'Pages' option on the left.   
+- Here I changed the branch from 'none' to 'main'.
+- Finally I clicked save and after a short while a link to my deployed site is displayed on screen.
+- It can take a few minutes, but if nothing happens I find that typing anything in the 'Custom domain' input box and pressing enter can cause the page to produce the link.
+- I made sure to click on the link to check that it worked.
 
 ### Heroku
 
