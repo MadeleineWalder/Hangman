@@ -28,7 +28,7 @@ def question():
         print("Great, lets play!\n")
         play_game()
     elif play_question == "N":
-        print("Okay, we hope you change your mind!")
+        print("Okay, click 'Run Program' above if you change your mind!")
 
 
 def take_user_input_for_play():
@@ -94,7 +94,7 @@ def user_guess_result(word_length, letters_guessed, stage):
     :param stage: The stage of the hangman.
 
     '''
-    print(word_length)
+    print(" " + word_length)
     print("\n")
     print('Letters guessed:' + ' ' + ', '.join(letters_guessed))
     display_hangman(stage)

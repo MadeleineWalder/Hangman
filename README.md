@@ -3,7 +3,7 @@
 Welcome to Hangman, a simple game based on a childhood classic. In this game the user can play against the computer to guess the correct letters from a random word. However they must race to complete the word before running out of lives.
 In this game the user can play as many times as they want, with a list of over 50+ possible words to keep it interesting.
 
-### Link to deployed program: --- ADD ---
+### Link to deployed program: https://hangman-project.herokuapp.com/
 
 --- example screenshot? ---
 
