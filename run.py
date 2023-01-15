@@ -1,5 +1,6 @@
 # Clears terminal before printing. Command 'python3 run.py' invisible to user.
 import os
+os.system("cls")
 
 # Import random word from words.py file
 import random
@@ -15,7 +16,6 @@ def new_game():
     '''
     The start where the user is welcomed and given brief instrucions.
     '''
-    os.system("cls")
     print("\n")
     print("Welcome to Hangman!")
     print("Guess the letters in the word before the hangman is complete!\n")
