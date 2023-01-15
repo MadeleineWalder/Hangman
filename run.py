@@ -15,6 +15,7 @@ def new_game():
     '''
     The start where the user is welcomed and given brief instrucions.
     '''
+    os.system("cls")
     print("\n")
     print("Welcome to Hangman!")
     print("Guess the letters in the word before the hangman is complete!\n")
@@ -139,5 +140,4 @@ def ask_user_for_letter(letters_guessed, word):
 
 
 if __name__ == '__main__':
-    os.system("cls")
     new_game()
