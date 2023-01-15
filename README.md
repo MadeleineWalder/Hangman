@@ -25,7 +25,14 @@ Welcome to Hangman, a simple game based on a childhood classic. In this game the
 
 - If they answer yes, the game begins and an empty word is diplayed along with the base stage of the hangman.
 
-- The user can then enter a letter of their choice.
+- The user can then enter a letter of their choice, pressing enter to submit the letter. From here there are four possible outcomes:
+1. If the letter is not in the word
+
+2. If the letter is in the word
+
+3. If the letter is already guessed, reguardless of if it's in the word or not
+
+4. If the user input is invalid
 
 
 ---

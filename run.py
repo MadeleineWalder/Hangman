@@ -1,6 +1,5 @@
 # Clears terminal before printing. Command 'python3 run.py' invisible to user.
 import os
-os.system("cls")
 
 # Import random word from words.py file
 import random
@@ -10,6 +9,12 @@ from words import WORD_LIST
 from hangman import __HANGMAN_STAGES__, display_hangman
 
 # python3 run.py
+
+def clear_screen():
+    '''
+    Function which clears the terrminal
+    '''
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def new_game():
@@ -140,4 +145,5 @@ def ask_user_for_letter(letters_guessed, word):
 
 
 if __name__ == '__main__':
+    clear_screen()
     new_game()
