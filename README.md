@@ -1,9 +1,8 @@
 # Hangman
 
-Welcome to Hangman, a simple game based on a childhood classic. In this game the user can play against the computer to guess the correct letters from a random word. However they must race to complete the word before running out of lives.
-In this game the user can play as many times as they want, with a list of over 50+ possible words to keep it interesting.
+Welcome to Hangman, a simple game based on a childhood classic. In this game the user can must guess the correct letters from a random word, one letter at a time. However they must race to complete the word before running out of tries, as each incorrect guess builds a stage of the hangman. If the entire hangman is completed it's game over! So choose your letters wisely. In this game the user can play as many times as they want, with a list of over 50+ possible words available. This project being my first ever Python based project was extremely fun to make so I hope you enjoy!
 
-### Link to deployed program: https://hangman-project.herokuapp.com/
+### Link to deployed app: https://hangman-project.herokuapp.com/
 
 --- example screenshot? ---
 
@@ -14,20 +13,28 @@ In this game the user can play as many times as they want, with a list of over 5
 - As a user I want to be able to play a game of Hangman
 - As a user I want to be able to see clearly what letters I have already guessed
 - As a user I want to be able to play the game as many times as I want
-- As a user I want to a variety of words to guess from to keep the game interesting
+- As a user I want a variety of words to guess from to keep the game interesting
 
 ---
 
 ## Existing Features:
+
+- Firstly there is a welcome message to user, before asking them if they want to play the game.
+
+- Upon answering no the user is told how they can start the game again if they change their mind.
+
+- If they answer yes, the game begins and an empty word is diplayed along with the base stage of the hangman.
+
+- The user can then enter a letter of their choice.
 
 
 ---
 
 ## Future Features:
 
-- An option to be able to choose difficulty
+- An option to be able to choose the difficulty setting would make the game more suitable for different age ranges. For example children could choose to play on an easier setting that chooses from a list of shorter, more common words.
 
-- An option to be able to play against a friend. Have them choose the word for you and vise versa.
+- An option to be able to play against a friend would make to game more interactive. If there was a two player option the players could take it in turns to choose the word for each other. There could even be a score system where each are awarded a point for correctly guessing a word, and the first to five points wins.
 
 ---
 
@@ -80,29 +87,3 @@ and see if they matched to the users guess. What I didn't know until watching th
 - Link to the video: https://www.youtube.com/watch?v=m4nEnsavl6w&t=510s&ab_channel=Kite (specifically at 4:40)
 
 ---
-
----
-
----
-
-## CI info
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
-
-## Creating the Heroku app
-
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.

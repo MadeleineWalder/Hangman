@@ -1,8 +1,11 @@
-""" Import random and my words from words.py file to use in game """
+# Clears terminal before printing. Command 'python3 run.py' invisible to user.
+import os
+
+# Import random word from words.py file
 import random
 from words import WORD_LIST
 
-""" Import hangman diagram and all its stages from hangman.py file """
+# Import hangman diagram and all its stages from hangman.py file
 from hangman import __HANGMAN_STAGES__, display_hangman
 
 # python3 run.py
@@ -54,7 +57,7 @@ def play_game():
     '''
     word = random.choice(WORD_LIST)
     word_length = "_" * len(word)
-    print(word_length)
+    print(" " + word_length)
     stage = 6
     (display_hangman(stage))
     letters_guessed = []
@@ -136,4 +139,5 @@ def ask_user_for_letter(letters_guessed, word):
 
 
 if __name__ == '__main__':
+    os.system("cls")
     new_game()
