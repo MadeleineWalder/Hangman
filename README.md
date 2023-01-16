@@ -63,7 +63,58 @@ Welcome to Hangman, a simple game based on a childhood classic. In this game the
 
 ## Testing:
 
---- screenshots ---
+
+- When the program is opened the user will see the welcome message and play question:
+
+![Screenshot of the welcome message and question](./docs/hmwelcome.jpg)
+
+- When the user answers the question there are multiple different outcomes:
+
+The user answer is invalid. This could mean that they typed anything that is not 'y', 'Y', 'n' or 'N'. This includes punctuation, empty space, numbers, other letters or multiple of the above.
+
+![Screenshot of invalid answers](./docs/invalid1.jpg)
+
+- If the user answers 'n' or 'N' for no they will see the message telling them to click 'Run Program' if they change their mind, and the program ends.
+
+![Screenshot of the program ending after user enters lower case n](./docs/n.jpg)
+
+![Screenshot of the program ending after user enters upper case n](./docs/N2.jpg)
+
+- If the user answers 'y' or 'Y' for yes, they will see the message "Great, lets play!" and the game begins.
+
+![Screenshot of the program ending after user enters lower case y](./docs/y.jpg)
+
+![Screenshot of the program ending after user enters upper case y](./docs/Y2.jpg)
+
+- After the game begins the user can enter a second input to guess the letters from the word. Here are the different possible outcomes:
+
+The user answer is invalid. This means they entered anything other than a single letter in lower or upper case. Again this could be punctuation, empty space, numbers, multiple letters or several of the above.
+
+![Screenshot of invalid answers](./docs/invalid2.jpg)
+
+The user answer was incorrect. Then they will see their guess added to the letters guessed list and a hangman stage added. In this case it's the first stage which is the head.
+
+![Screenshot of incorrect answer](./docs/incorrect.jpg)
+
+The user answer was correct. They will see a message telling them their guess was correct. Then they will see their guess added to the word and the letters guessed list.
+
+![Screenshot of correct answer](./docs/correct.jpg)
+
+The user answer was already guessed, whether it was correct or not. Again this can be in lower or upper case. They will see the already guessed messaged and be asked for another input.
+
+Examples of already guessed correct and incorrect letters in upper or lower case:
+
+![Screenshot of users answer already guessed](./docs/guessed2.jpg)
+
+- The user can continue to guess until either the hangman or the word is complete. If the hangman is complete, the user has lost and they are told that they ran out of guesses. They can see what the word actually was, before the play question from the begining is asked again. The steps are then repeated.
+
+![Screenshot of user loosing the game](./docs/loose.jpg)
+
+- If the word is complete and the user has won, they are congratulated. The play question from the begining is asked again and the steps are repeated.
+
+![Screenshot of user winning the game](./docs/win.jpg)
+
+---
 
 ## Validator Testing:
 
@@ -80,6 +131,10 @@ Validation of hangman.py file:
 Validation of words.py file:
 
 ![Screenshot of words.py file showing 0 erros](./docs/codecheck3.jpg)
+
+- I tested my program using [Lighthouse](https://www.pythonchecker.com) from Google Chromes Dev Tools and it had a good score.
+
+![Screenshot of lighthouse score](./docs/hangmanlighthouse.jpg)
 
 ---
 
