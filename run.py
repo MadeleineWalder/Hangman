@@ -1,11 +1,9 @@
-# Clears terminal before printing starting game.
+'''
+Imports
+'''
 import os
-
-# Import random word from words.py file
 import random
 from words import WORD_LIST
-
-# Import hangman diagram and all its stages from hangman.py file
 from hangman import __HANGMAN_STAGES__, display_hangman
 
 # python3 run.py
@@ -25,7 +23,6 @@ def new_game():
     print("\n")
     print("Welcome to Hangman!")
     print("Guess the letters in the word before the hangman is complete!\n")
-
     question()
 
 
@@ -64,9 +61,9 @@ def play_game():
     '''
     word = random.choice(WORD_LIST)
     word_length = "_" * len(word)
-    print(" " + word_length)
+    print("_ " * len(word))
     stage = 6
-    (display_hangman(stage))
+    display_hangman(stage)
     letters_guessed = []
     word_complete = False
     while not word_complete and stage > 0:
@@ -100,7 +97,6 @@ def user_guess_result(word_length, letters_guessed, stage):
     :param word_length: The word in underscores which correct letters replace.
     :param letters_guessed: List of letters user has already guessed.
     :param stage: The stage of the hangman.
-
     '''
     print(" " + word_length)
     print("\n")
@@ -131,7 +127,7 @@ def ask_user_for_letter(letters_guessed, word):
     :param word: The word containing the letters which the user must guess.
     :return: The user input if valid.
     '''
-    user_input = 'asdfas'
+    user_input = ''
     user_input_invalid = True
     while user_input_invalid:
         user_input = input("Type a letter here:\n").lower()
