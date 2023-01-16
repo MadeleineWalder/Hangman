@@ -1,10 +1,10 @@
 # Hangman
 
-Welcome to Hangman, a simple game based on a childhood classic. In this game the user can must guess the correct letters from a random word, one letter at a time. However they must race to complete the word before running out of tries, as each incorrect guess builds a stage of the hangman. If the entire hangman is completed it's game over! So choose your letters wisely. In this game the user can play as many times as they want, with a list of over 50+ possible words available. This project being my first ever Python based project was extremely fun to make so I hope you enjoy!
+### Welcome to Hangman, a simple game based on a childhood classic. In this game the user can must guess the correct letters from a random word, one letter at a time. However they must race to complete the word before running out of tries, as each incorrect guess builds a stage of the hangman. If the entire hangman is completed it's game over! So choose your letters wisely. In this game the user can play as many times as they want, with a list of over 50+ possible words available. This project being my first ever Python based project was extremely fun to make so I hope you enjoy!
+
+![Screenshot of finished program when opened](./docs/finished.jpg)
 
 ### Link to deployed app: https://hangman-project.herokuapp.com/
-
---- example screenshot? ---
 
 ---
 
@@ -140,15 +140,18 @@ Validation of words.py file:
 
 ## Bugs
 
-- I had a bug where the legs of the hangman diagram were made of slashes like so: / \ . However the program saw the backslash as something that shouldn't be displayed for some reason. This resulted in him always having one leg and offset the bottom of the stand onto to right end of the next line. Basically it ruined the final stage of the diagram and I had to rework it by making the legs L's instead. This seemed to fix the issue as the program no longer recognised the punctuation as a kind of command or syntax for something else.
+- I had a bug where the legs of the hangman diagram were made of slashes like so: / \ . However the program saw the backslash as something that shouldn't be displayed for some reason. This resulted in him always having one leg and offsetting the bottom of the stand onto to right end of the next line. It ruined the final stage of the diagram and I had to rework it by making the legs L's instead. This seemed to fix the issue as the program no longer recognised the punctuation as a kind of command or syntax for something else.
 
-Before:
+- I also came across a bug where the user could guess the same incorrect answer again and again. When looking closer at my code I realised that first of all I had used 'else if' which is JavaScript, so I changed it to the Python version 'elif'. Then I noticed that the problem was that the code was returning the answer if it was valid, before it had been checked to see if it was on the list of guessed letters. Fixing this was pretty simple as all I had to do was switch the lines of code around inside the while loop. So after the 'if' statement I put 'user_input in letters guessed' followed by the print statement. Then after the 'elif' statement I put the code to check if the users guess was valid. Therefore it would check if the answer was already guessed before returning it to the play_game() function to be checked if it's in the word or not.
 
-![Screenshot of ](./docs/.jpg)
 
-After:
+Before fix:
 
-![Screenshot of ](./docs/.jpg)
+![Screenshot of code before bug fix](./docs/bug1.jpg)
+
+After fix:
+
+![Screenshot of code after bug fix ](./docs/bug2.jpg)
 
 ---
 
