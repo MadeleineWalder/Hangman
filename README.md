@@ -4,7 +4,7 @@
 
 ![Screenshot of finished program when opened](./docs/finished.jpg)
 
-### Link to deployed app: https://hangman-project.herokuapp.com/
+### Link to deployed app on Heroku: https://hangman-project.herokuapp.com/
 
 ---
 
@@ -173,6 +173,9 @@ After fix:
 - Finally I clicked save and after a short while a link to my deployed site is displayed on screen.
 - It can take a few minutes, but if nothing happens I find that typing anything in the 'Custom domain' input box and pressing enter can cause the page to produce the link.
 - I made sure to click on the link to check that it worked.
+- Note that for this project deployed site on Github only displays the readme.md file, and it's Heroku where the actual game is runnable.
+
+Link to deployed Github site: https://madeleinewalder.github.io/Hangman/
 
 ### Heroku
 
@@ -191,13 +194,18 @@ After fix:
 - Click on 'Automatic Deploy' to enable the app to be updated every time new code is pushed to Github.
 - Then click 'Manual Deploy' to deploy to app. This can take a minute. When it's done click 'View' to see your deployed app and save the link.
 
+Link to deployed app on Heroku: https://hangman-project.herokuapp.com/
+
 ---
 
 ## Credits:
 
-- Line 55-63 of the run.py file takes heavey inspiration from a YouTube tutorial by a channel called 'Kite'. I had a lot of trouble and spent a lot of time trying to figure out how to write this part of the code.
-I knew I wanted the correct letters to replace the underscores in the word when guessed but I wasn't sure how to do this. I knew that I would need the program to iterate through the individual letters of the word
-and see if they matched to the users guess. What I didn't know until watching this tutorial was that I could use the '.join' method to the add that letter in if it did match, and it would go in the correct place.
-Link to the video: https://www.youtube.com/watch?v=m4nEnsavl6w&t=510s&ab_channel=Kite (specifically at 4:40).
+- Line 77-83 of the run.py file takes heavey inspiration from a YouTube tutorial by a channel called 'Kite'. I had a lot of trouble and spent a lot of time trying to figure out how to write this part of the code.
+I knew I wanted the correct letters to replace the underscores in the word when guessed but I wasn't sure how to do this. I knew that I would need the code to iterate through the individual letters of the word
+and see if they matched to the users guess. From Kite's code I learnt the 'enumerate' keyword which could be used to do exactly that. I also learnt that I could use the '.join' method to add the correct letter in.
+
+![Screenshot of credited code](./docs/kite.jpg)
+
+Link to the video: https://www.youtube.com/watch?v=m4nEnsavl6w&t=510s&ab_channel=Kite (See 4:40).
 
 ---

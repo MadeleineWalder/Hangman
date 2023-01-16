@@ -74,7 +74,6 @@ def play_game():
         if user_input in word:
             print(f"Correct! {user_input} is in the word!\n")
             letters_guessed.append(user_input)
-            # Code by 'Kite'.
             word_as_list = list(word_length)
             indices = [
                 i for i, letter in enumerate(word) if letter == user_input
@@ -82,7 +81,6 @@ def play_game():
             for index in indices:
                 word_as_list[index] = user_input
             word_length = "".join(word_as_list)
-            # Ends here.
             if "_" not in word_length:
                 word_complete = True
         else:
