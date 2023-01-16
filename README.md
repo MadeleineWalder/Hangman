@@ -140,8 +140,6 @@ Validation of words.py file:
 
 ## Bugs
 
-- I had a bug where the legs of the hangman diagram were made of slashes like so: / \ . However the program saw the backslash as something that shouldn't be displayed for some reason. This resulted in him always having one leg and offsetting the bottom of the stand onto to right end of the next line. It ruined the final stage of the diagram and I had to rework it by making the legs L's instead. This seemed to fix the issue as the program no longer recognised the punctuation as a kind of command or syntax for something else.
-
 - I also came across a bug where the user could guess the same incorrect answer again and again. When looking closer at my code I realised that first of all I had used 'else if' which is JavaScript, so I changed it to the Python version 'elif'. Then I noticed that the problem was that the code was returning the answer if it was valid, before it had been checked to see if it was on the list of guessed letters. Fixing this was pretty simple as all I had to do was switch the lines of code around inside the while loop. So after the 'if' statement I put 'user_input in letters guessed' followed by the print statement. Then after the 'elif' statement I put the code to check if the users guess was valid. Therefore it would check if the answer was already guessed before returning it to the play_game() function to be checked if it's in the word or not.
 
 
@@ -207,5 +205,7 @@ and see if they matched to the users guess. From Kite's code I learnt the 'enume
 ![Screenshot of credited code](./docs/kite.jpg)
 
 Link to the video: https://www.youtube.com/watch?v=m4nEnsavl6w&t=510s&ab_channel=Kite (See 4:40).
+
+- The hangman I used in my game was designed by Chris Horton. After trying to make my own I was having problems with the legs. I was using slashes like so: '/ \' but there was a bug with the program recognising the backslash as code and not displaying it. I changed them to two L's instead but then it looked confusing as they are also letters and could be mistaken for guessed answers. I then searched for a hangman diagram I could use instead and found this one https://gist.github.com/chrishorton/8510732aa9a80a03c829b09f12e20d9c which was much better.
 
 ---
