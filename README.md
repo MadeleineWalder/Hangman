@@ -173,15 +173,28 @@ After:
 
 ### Heroku
 
-- I deployed my site using Heroku.
+- I deployed my site using Heroku once I had made an account with them and linked it to my Github account. The steps were as follows:
+- Click on 'New' and then 'Create new app'.
+- Name the app. I named mine 'hangman-project'.
+- Select the region. I selected Europe as that's my region.
+- Click 'Create App'.
+- Next go to the 'Settings' tab to create any Config Var's you need.
+- For mine the key was 'PORT' and the value was 8000.
+- Next scroll down to 'Buildpacks' to add any buildpacks you need.
+- To do this click 'Add buildpack' and select the one you need. I needed two, the first was Python and the second was node.js in that order, making sure to click 'Save changes' after each.
+- Click 'Save'.
+- Go to the 'Deploy' tab.
+- Select 'Github', search for your repository and click 'Connect'.
+- Click on 'Automatic Deploy' to enable the app to be updated every time new code is pushed to Github.
+- Then click 'Manual Deploy' to deploy to app. This can take a minute. When it's done click 'View' to see your deployed app and save the link.
 
 ---
 
 ## Credits:
 
-- Line 55-63 of the run.py file takes heavey inspiration from a YouTube tutorial by a channel called 'Kite'. I had a lot of trouble and spent a lot of time trying to figure ouut how to write this part of the code.
-- I knew I wanted the correct letters to replace the underscores in the word when guessed but I was'nt sure how to do this. I knew that I would need the program to iterate through the individual letters of the word
-and see if they matched to the users guess. What I didn't know until watching this tutorial was that I could use the '.join' method to the add that letter in if it did match.
-- Link to the video: https://www.youtube.com/watch?v=m4nEnsavl6w&t=510s&ab_channel=Kite (specifically at 4:40)
+- Line 55-63 of the run.py file takes heavey inspiration from a YouTube tutorial by a channel called 'Kite'. I had a lot of trouble and spent a lot of time trying to figure out how to write this part of the code.
+I knew I wanted the correct letters to replace the underscores in the word when guessed but I wasn't sure how to do this. I knew that I would need the program to iterate through the individual letters of the word
+and see if they matched to the users guess. What I didn't know until watching this tutorial was that I could use the '.join' method to the add that letter in if it did match, and it would go in the correct place.
+Link to the video: https://www.youtube.com/watch?v=m4nEnsavl6w&t=510s&ab_channel=Kite (specifically at 4:40).
 
 ---
