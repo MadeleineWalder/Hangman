@@ -53,6 +53,12 @@
 
 ---
 
+## Flowchart:
+
+- I created this flow chart using an app called Goodnotes which I constantly keep beside me to record everything I do. The flowchart is a super useful way of planning a project and makes it a lot easier to plan out what functions you need to perform which tasks.
+
+![Image of my flowchart showing stages of game](./docs/fc.jpg)
+
 ## Technologies:
 
 - Python was the main coding language I used for this project. All the game code is written in Python.
