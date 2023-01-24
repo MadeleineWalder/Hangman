@@ -104,17 +104,17 @@ The user answer was incorrect. Then they will see their guess added to the lette
 
 The user answer was correct. They will see a message telling them their guess was correct. Then they will see their guess added to the word and the letters guessed list.
 
-![Screenshot of correct answer](./docs/correct.jpg)
+![Screenshot of correct answer](./docs/correct1.jpg)
 
 The user answer was already guessed, whether it was correct or not. Again this can be in lower or upper case. They will see the already guessed messaged and be asked for another input.
 
 Examples of already guessed correct and incorrect letters in upper or lower case:
 
-![Screenshot of users answer already guessed](./docs/guessed2.jpg)
+![Screenshot of users answer already guessed](./docs/guessed3.jpg)
 
 - The user can continue to guess until either the hangman or the word is complete. If the hangman is complete, the user has lost and they are told that they ran out of guesses. They can see what the word actually was, before the play question from the begining is asked again. The steps are then repeated.
 
-![Screenshot of user loosing the game](./docs/loose.jpg)
+![Screenshot of user loosing the game](./docs/loose1.jpg)
 
 - If the word is complete and the user has won, they are congratulated. The play question from the begining is asked again and the steps are repeated.
 
@@ -156,6 +156,10 @@ Before fix:
 After fix:
 
 ![Screenshot of code after bug fix ](./docs/bug2.jpg)
+
+- CURRENT BUG: I currently have bug where the spaces between the underscores do not show up after the user has guessed a letter. I've spent a long time trynig to fix this, even a tutor could not fix the problem after an hour of us trying different things. Unfortunately I have run out of time to try fixing it and will have to leave it as it is. The game is still playable but the word is harder to see without the underscores. 
+
+![Screenshot of code with bug underlined in red ](./docs/bug3.jpg)
 
 ---
 

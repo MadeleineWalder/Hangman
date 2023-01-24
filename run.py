@@ -98,7 +98,7 @@ def user_guess_result(word_length, letters_guessed, stage):
     :param letters_guessed: List of letters user has already guessed.
     :param stage: The stage of the hangman.
     '''
-    print(" " + word_length)
+    print("_" + word_length)
     print("\n")
     print('Letters guessed:' + ' ' + ', '.join(letters_guessed))
     display_hangman(stage)
