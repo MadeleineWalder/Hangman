@@ -146,7 +146,7 @@ Validation of words.py file:
 
 ## Bugs
 
-- I also came across a bug where the user could guess the same incorrect answer again and again. When looking closer at my code I realised that first of all I had used 'else if' which is JavaScript, so I changed it to the Python version 'elif'. Then I noticed that the problem was that the code was returning the answer if it was valid, before it had been checked to see if it was on the list of guessed letters. Fixing this was pretty simple as all I had to do was switch the lines of code around inside the while loop. So after the 'if' statement I put 'user_input in letters guessed' followed by the print statement. Then after the 'elif' statement I put the code to check if the users guess was valid. Therefore it would check if the answer was already guessed before returning it to the play_game() function to be checked if it's in the word or not.
+- I came across a bug where the user could guess the same incorrect answer again and again. When looking closer at my code I realised that first of all I had used 'else if' which is JavaScript, so I changed it to the Python version 'elif'. Then I noticed that the problem was that the code was returning the answer if it was valid, before it had been checked to see if it was on the list of guessed letters. Fixing this was pretty simple as all I had to do was switch the lines of code around inside the while loop. So after the 'if' statement I put 'user_input in letters guessed' followed by the print statement. Then after the 'elif' statement I put the code to check if the users guess was valid. Therefore it would check if the answer was already guessed before returning it to the play_game() function to be checked if it's in the word or not.
 
 
 Before fix:
@@ -160,6 +160,11 @@ After fix:
 - CURRENT BUG: I currently have bug where the spaces between the underscores do not show up after the user has guessed a letter. I've spent a long time trynig to fix this, even a tutor could not fix the problem after an hour of us trying different things. Unfortunately I have run out of time to try fixing it and will have to leave it as it is. The game is still playable but the word is harder to see without the underscores. 
 
 ![Screenshot of code with bug underlined in red ](./docs/bug3.jpg)
+
+
+- CURRENT BUG: There is a space in front of the completed word, and I have no idea why this is happening. It didn't happen before it was recommend by my tutor to add spaces between the underscores so it must be to do with that. However that change was suggested the evening before my deadline at 12:00 noon the next day, so like the other current bug I didn't have time to fix it.
+
+![Screenshot of bug with underscore before finished word](./docs/win.jpg)
 
 ---
 
