@@ -1,6 +1,6 @@
 # Hangman
 
-### Welcome to Hangman, a simple game based on a childhood classic. In this game the user can must guess the correct letters from a random word, one letter at a time. However they must race to complete the word before running out of tries, as each incorrect guess builds a stage of the hangman. If the entire hangman is completed it's game over! So choose your letters wisely. In this game the user can play as many times as they want, with a list of over 50+ possible words available. This project being my first ever Python based project was extremely fun to make so I hope you enjoy!
+### Welcome to Hangman, a simple childhood classic. The user must guess the correct letters from a random word, one letter at a time. Each incorrect guess builds a stage of the hangman. If the entire hangman is completed before you guess the word it's game over! So choose your letters wisely. The user can play as many times as they want, with a list of over 50+ possible words available. This project being my first ever Python based project was extremely fun to make so I hope you enjoy!
 
 ![Screenshot of finished program when opened](./docs/finished.jpg)
 
@@ -27,13 +27,13 @@
 
 - The user can then enter a letter of their choice, pressing enter to submit the letter. From here there are four possible outcomes:
 
-1. The letter is not in the word. The letter is added to the 'Letters guessed:' list for the user to see. They are notified with a print statement that the letter is not in the word, and one stage of hangman is added and displayed.
+    1. The letter is not in the word. The letter is added to the 'Letters guessed:' list for the user to see. They are notified with a print statement that the letter is not in the word, and one stage of hangman is added and displayed.
 
-2. The letter is in the word. The letter is added to the 'Letters guessed:' list for the user to see. They are notified with a print statement that the letter was correct, and it is added into the word.
+    2. The letter is in the word. The letter is added to the 'Letters guessed:' list for the user to see. They are notified with a print statement that the letter was correct, and it is added into the word.
 
-3. The letter is already guessed. Reguardless of if it's in the word or not, if the letter is in the 'Letters guessed:' list they will be notified with a print statement that they already guessed that letter.
+    3. The letter is already guessed. Reguardless of if it's in the word or not, if the letter is in the 'Letters guessed:' list they will be notified with a print statement that they already guessed that letter.
 
-4. The user input is invalid. The user must enter one single letter, or they will be told their answer was invalid and asked again for an input. Letters are not case sensitive.
+    4. The user input is invalid. The user must enter one single letter, or they will be told their answer was invalid and asked again for an input. Letters are not case sensitive.
 
 - At the end of each of these the user is asked again for an input until the word or hangman are complete.
 
@@ -62,7 +62,7 @@
 ## Technologies:
 
 - Python was the main coding language I used for this project. All the game code is written in Python.
-- I used [Github](https://github.com/) along with a Python template to create my repository and [Gitpod](https://www.gitpod.io/) for writting the code.
+- I used [Github](https://github.com/) and [Gitpod](https://www.gitpod.io/) for making this projected.
 - I used [Heroku](https://www.heroku.com) to deploy my project.
 
 ---
@@ -146,8 +146,11 @@ Validation of words.py file:
 
 ## Bugs
 
-- I came across a bug where the user could guess the same incorrect answer again and again. When looking closer at my code I realised that first of all I had used 'else if' which is JavaScript, so I changed it to the Python version 'elif'. Then I noticed that the problem was that the code was returning the answer if it was valid, before it had been checked to see if it was on the list of guessed letters. Fixing this was pretty simple as all I had to do was switch the lines of code around inside the while loop. So after the 'if' statement I put 'user_input in letters guessed' followed by the print statement. Then after the 'elif' statement I put the code to check if the users guess was valid. Therefore it would check if the answer was already guessed before returning it to the play_game() function to be checked if it's in the word or not.
+- BUG: The user could guess the same incorrect answer again and again. 
 
+- SOLUTION:  The guess was returned if it was valid before it was checked to see if it was on the list of guessed letters. All I had to do was switch the lines of code around inside the while loop. So after the 'if' statement I put 'user_input in letters guessed' followed by the print statement. Then after the 'elif' statement I put the code to check if the users guess was valid. Therefore it would check if the guess was already guessed before returning it to the play_game() function to be checked if it's in the word or not.
+
+- OUTCOME: **Fixed**
 
 Before fix:
 
@@ -157,9 +160,13 @@ After fix:
 
 ![Screenshot of code after bug fix ](./docs/bug2.jpg)
 
-- CURRENT BUG: I currently have bug where the spaces between the underscores do not show up after the user has guessed a letter. I've spent a long time trynig to fix this, even a tutor could not fix the problem after an hour of us trying different things. Unfortunately I have run out of time to try fixing it and will have to leave it as it is. The game is still playable but the word is harder to see without the underscores. 
+- BUG: I currently have bug where the gaps between the underscores do not show up. It is **only on the deployed version** on Heroku.
 
-![Screenshot of code with bug underlined in red ](./docs/bug3.jpg)
+- SOLUTION: I've spent a long time trying to fix this with help from a professional tutor and a mentor. After an hour of us trying different things this is still unfixed. We tried adding spaces but then they were counted as part of the word resulting in more issues. 
+
+- OUTCOME: **UNFIXED** The game is still playable but the word is harder to see without the gaps. 
+
+![Screenshot of bug](./docs/nospace.jpg)
 
 ---
 
