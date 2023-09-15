@@ -61,7 +61,7 @@ def play_game():
     '''
     word = random.choice(WORD_LIST)
     word_length = "_" * len(word)
-    print("_ " * len(word))
+    print("_" * len(word))
     stage = 6
     display_hangman(stage)
     letters_guessed = []
@@ -74,7 +74,7 @@ def play_game():
             word_as_list = list(word_length)
             indices = [
                 i for i, letter in enumerate(word) if letter == user_input
-                 ]
+                ]
             for index in indices:
                 word_as_list[index] = user_input
             word_length = "".join(word_as_list)
@@ -86,7 +86,7 @@ def play_game():
             stage -= 1
         user_guess_result(word_length, letters_guessed, stage)
     display_final_result(word_complete, word)
-    question()  
+    question()
 
 
 def user_guess_result(word_length, letters_guessed, stage):
@@ -98,7 +98,8 @@ def user_guess_result(word_length, letters_guessed, stage):
     :param letters_guessed: List of letters user has already guessed.
     :param stage: The stage of the hangman.
     '''
-    print("_" + word_length)
+    # print("_" + word_length)
+    print(word_length)
     print("\n")
     print('Letters guessed:' + ' ' + ', '.join(letters_guessed))
     display_hangman(stage)

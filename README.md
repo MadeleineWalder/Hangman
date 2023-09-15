@@ -161,11 +161,6 @@ After fix:
 
 ![Screenshot of code with bug underlined in red ](./docs/bug3.jpg)
 
-
-- CURRENT BUG: There is a space in front of the completed word, and I have no idea why this is happening. It didn't happen before it was recommend by my tutor to add spaces between the underscores so it must be to do with that. However that change was suggested the evening before my deadline at 12:00 noon the next day, so like the other current bug I didn't have time to fix it.
-
-![Screenshot of bug with underscore before finished word](./docs/win.jpg)
-
 ---
 
 ## Deployment:
@@ -173,9 +168,11 @@ After fix:
 ### Gitpod
 
 - Typing 'python3 -m http.server' into the Gitpod terminal and clicking open browser on the pop up window allows you to view the site in a browser as if it were live.
-- Every time a secton of code is added the browser can be refreshed to see the change. Sometimes you need to press ctrl, shift and R at the same time for changes to be updated.
-- To save your progress, type 'git add .' into the terminal to add all your changes, followed by 'git commit -m' and then your message describing what you did in double quotes.
-- Lastly type'git push' and this will push your code along with all the saved changes. This should be done at the end of every coding session or whenever you want an already deployed site to be updated.
+- Alternatively you can type 'python3 run.py' into the terminal to run the game there.
+- The browser can be refreshed to see any changes made, providing you quick save changes with ctrl+s. Sometimes you need to press ctrl, shift and R at the same time for changes to be updated.
+- To save changes type 'git add .' into the terminal
+- Next type 'git commit -m "_"' followed by your message describing what you changed inside the double quotes.
+- Lastly type'git push' and this will push your code along with all the saved changes ready for use. This should be done at the end of every coding session or whenever you want an already deployed site to be updated.
 
 
 ### Github and Github Pages
